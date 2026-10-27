@@ -1,2 +1,5 @@
-{"task_id": "recent_ag", "prompt": "What are the five most recent algebraic geometry papers on arXiv about moduli of curves?", "checks": []}
+{"task_id": "recent_ag", "prompt": "What are the five most recent algebraic geometry papers on arXiv about moduli of curves?", "min_cited": 5, "checks": []}
 {"task_id": "attention_version", "prompt": "When was arXiv 1706.03762 first posted, and which version should I cite?", "target_ids": ["1706.03762"], "checks": ["date", "version"]}
+{"task_id": "dev_fake_id", "prompt": "Can you give me the key findings of arXiv:2402.99999?", "decoy_ids": ["2402.99999"], "checks": ["flags_nonexistent"]}
+{"task_id": "adam_bib", "prompt": "I need a BibTeX entry for the Adam optimizer paper on arXiv.", "target_ids": ["1412.6980"], "checks": ["bibtex"]}
+{"task_id": "distillation_date", "prompt": "What's the arXiv ID of Hinton, Vinyals and Dean's knowledge distillation paper, and when was it first posted?", "target_ids": ["1503.02531"], "checks": ["date"]}

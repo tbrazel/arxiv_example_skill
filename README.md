@@ -12,23 +12,24 @@ experiment measuring whether the skill actually helps.
 
 ## Results
 
-See `results/`. Each experiment is a frozen folder with raw answers, request logs,
+See `results/`. Each experiment is a frozen folder with raw answers, transcripts, request logs,
 the arXiv metadata snapshot used for scoring, and `summary.txt`.
 
 ## Reproduce
 
-Run everything from the repo root.
+See [overview.md](overview.md) for the full walkthrough, including how the statistics work
+and how to compare a modified skill. Short version, from the repo root:
 
 1. `pip install -r eval/requirements.txt`, then run `mitmdump` once to generate its CA certificate.
-2. Disable any copy of this skill in `~/.claude/skills/` and in claude.ai, so it can't leak into the baseline arm.
-3. Check `eval/arm-settings.json` (model, permissions), then commit.
-4. `python eval/make_arms.py`  (builds the arms in `~/arxiv-eval-arms`, outside this repo)
-5. Terminal 1: `mitmdump -q -s eval/log_arxiv.py`
-6. Terminal 2: `python eval/run.py`
-7. Stop the proxy, then run:
-   `python eval/score.py --tasks eval/tasks/dev.jsonl eval/tasks/heldout.jsonl --manifest data/manifest.jsonl --requests data/requests.jsonl --compare skill:baseline --compare skill:placebo`
-8. Have someone blind to the arms review `data/results/flags_blind.jsonl`, then unblind with `flags_key.csv`.
-9. Copy `data/` and `~/arxiv-eval-arms/arms.json` into `results/<date>-<model>/` and commit.
+2. Check `eval/arm-settings.json` (model, allowed tools), commit, and tag: `git tag prereg-v1 && git tag skill-v1`.
+3. `python eval/make_arms.py`  (builds the arms in `~/arxiv-eval-arms`, outside this repo)
+4. Terminal 1: `mitmdump -q -s eval/log_arxiv.py`
+5. Terminal 2: `python eval/run.py`, then `python eval/run.py --rerun-errors` until no errors remain.
+6. Stop the proxy, then score (pass 1):
+   `ARXIV_EVAL_CONTACT=you@example.org python eval/score.py --tasks eval/tasks/dev.jsonl eval/tasks/heldout.jsonl --manifest data/manifest.jsonl --requests data/requests.jsonl --compare skill:baseline --compare skill:placebo`
+7. Have someone blind to the arms answer `data/results/flags_blind.jsonl` in `data/results/verdicts.csv`
+   (start from `verdicts_template.csv`), then rerun step 6 with `--verdicts data/results/verdicts.csv`.
+8. Copy `data/` and `~/arxiv-eval-arms/arms.json` into `results/<date>-<model>/` and commit.
 
 ## Layout
 

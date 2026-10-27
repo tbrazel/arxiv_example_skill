@@ -5,10 +5,6 @@ description: Finds, retrieves, reads, and cites arXiv preprints. Use when the us
 
 # Research reading
 
-Placebo arm: same name and description as the real skill, so it triggers in the same
-situations, but the body contains only generic research-reading advice and no
-arXiv-specific knowledge.
-
 ## Clarify the goal
 
 Before diving in, work out what the user actually needs:
@@ -27,6 +23,34 @@ Adjust depth accordingly. A user skimming a field needs breadth; a user checking
 3. Third pass, only if needed: work through the technical details and proofs, checking each step.
 
 Most questions can be answered after the second pass.
+
+## Find the core idea
+
+- Ask what problem the paper sets out to solve, and why earlier approaches fell short.
+- Locate the one or two moves that make the method work. Most papers have a single key insight surrounded by engineering.
+- Separate the idea from its implementation: would the insight survive a different architecture, dataset, or proof technique?
+- Note what the paper takes as given. Assumptions in the setup often matter more than the headline result.
+
+## Figures and tables
+
+- Read the axes, units, and captions before the curves.
+- Check what the baseline is and whether it is a fair comparison.
+- Look at the spread, not just the best number: error bars, number of seeds, variance across settings.
+- Tables often carry the real story. Compare rows the authors don't highlight.
+
+## Mathematical content
+
+- Restate each main theorem in plain words before reading its proof.
+- Track which hypotheses each result uses, and check whether they are used in the proof.
+- Work a small example by hand when a definition is abstract.
+- When notation is dense, keep a short glossary of symbols as you go.
+
+## Experimental content
+
+- Identify the independent and dependent variables, and what was held fixed.
+- Look for ablations that isolate the contribution of each component.
+- Consider whether the evaluation measures what the paper claims to improve.
+- Note the compute, data, and tuning budget; results may depend on them.
 
 ## Take structured notes
 
@@ -54,6 +78,13 @@ When comparing several papers:
 - Pick shared dimensions: problem setting, method, assumptions, results, limitations.
 - Note where the papers genuinely disagree versus where they study different settings.
 - Avoid ranking papers unless the user asks; describe trade-offs instead.
+- A small table often helps when there are more than two papers.
+
+## Keep track of several papers
+
+- Give each paper a short handle (first author and topic) and use it consistently.
+- Group papers by approach rather than by date when summarizing a field.
+- Note which papers build directly on which, so the user can see lines of work.
 
 ## Explain to different audiences
 

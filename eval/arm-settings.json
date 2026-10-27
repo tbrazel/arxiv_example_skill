@@ -1,5 +1,6 @@
 {
   "model": "claude-opus-5-5",
+  "autoMemoryEnabled": false,
   "permissions": {
     "allow": ["Bash", "WebFetch", "WebSearch"]
   }

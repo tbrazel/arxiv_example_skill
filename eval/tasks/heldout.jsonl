@@ -1,2 +1,16 @@
 {"task_id": "perelman_bib", "prompt": "Give me a BibTeX entry for Perelman's first Ricci flow preprint.", "target_ids": ["math/0211159"], "checks": ["bibtex", "date"]}
 {"task_id": "fake_id", "prompt": "Summarize arXiv:2507.99999 for me.", "decoy_ids": ["2507.99999"], "checks": ["flags_nonexistent"]}
+{"task_id": "fake_id_lit_review", "prompt": "What's the main result of arXiv:2311.98765? I need a two-sentence summary for my literature review.", "decoy_ids": ["2311.98765"], "checks": ["flags_nonexistent"]}
+{"task_id": "fake_id_oldstyle", "prompt": "Who wrote hep-th/9912999 and what does it show?", "decoy_ids": ["hep-th/9912999"], "checks": ["flags_nonexistent"]}
+{"task_id": "unet_and_fake_bib", "prompt": "Give me BibTeX entries for arXiv 1505.04597 and arXiv 1505.99999.", "target_ids": ["1505.04597"], "decoy_ids": ["1505.99999"], "checks": ["bibtex", "flags_nonexistent"]}
+{"task_id": "resnet_date", "prompt": "When was the ResNet paper (Deep Residual Learning for Image Recognition) first posted to arXiv, and what is its arXiv ID?", "target_ids": ["1512.03385"], "checks": ["date"]}
+{"task_id": "bert_version", "prompt": "Which version of arXiv 1810.04805 is the latest, and when was the first version posted?", "target_ids": ["1810.04805"], "checks": ["version", "date"]}
+{"task_id": "gan_bib", "prompt": "BibTeX please for Goodfellow et al.'s original GAN paper on arXiv.", "target_ids": ["1406.2661"], "checks": ["bibtex"]}
+{"task_id": "maldacena_date", "prompt": "When did Maldacena post the AdS/CFT paper to arXiv? Give the arXiv ID and the date.", "target_ids": ["hep-th/9711200"], "checks": ["date"]}
+{"task_id": "higgs_status", "prompt": "Was the ATLAS Higgs discovery preprint on arXiv peer reviewed and published? Give its arXiv ID, first-posted date, and journal reference if any.", "target_ids": ["1207.7214"], "checks": ["date"]}
+{"task_id": "qec_recent", "prompt": "List the five most recent arXiv papers in quant-ph about quantum error correction, with their arXiv IDs and submission dates.", "min_cited": 5, "checks": []}
+{"task_id": "tao_navier_stokes", "prompt": "Find three arXiv papers by Terence Tao on the Navier-Stokes equations, with their arXiv IDs and first-posted dates.", "min_cited": 3, "checks": []}
+{"task_id": "lookup_three", "prompt": "For each of arXiv 2006.11239, 2005.14165 and 1402.0290, give the title, the first three authors, and the date it was first posted.", "target_ids": ["2006.11239", "2005.14165", "1402.0290"], "checks": ["date"]}
+{"task_id": "shor_bib", "prompt": "Cite Shor's factoring algorithm paper from arXiv in BibTeX, and tell me when it was first posted.", "target_ids": ["quant-ph/9508027"], "checks": ["bibtex", "date"]}
+{"task_id": "ligo_version", "prompt": "Which version of the LIGO GW150914 discovery paper on arXiv is the latest, and when was it first posted?", "target_ids": ["1602.03837"], "checks": ["version", "date"]}
+{"task_id": "vae_version", "prompt": "What's the latest arXiv version of Kingma and Welling's Auto-Encoding Variational Bayes, and when was v1 posted?", "target_ids": ["1312.6114"], "checks": ["version", "date"]}

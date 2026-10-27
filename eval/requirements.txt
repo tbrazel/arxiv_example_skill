@@ -1,2 +1,3 @@
 mitmproxy
-scipy  # optional: adds the Wilcoxon signed-rank test to score.py
+scipy        # optional: adds the Wilcoxon signed-rank test to score.py
+statsmodels  # optional: adds the GEE sensitivity analysis to score.py
