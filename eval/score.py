@@ -223,11 +223,16 @@ TITLE_CAND_RES = [re.compile(p, re.M) for p in (
     r"(?<![*\w])\*([^*\n]{10,300})\*(?![*\w])", r"(?<!\w)_([^_\n]{10,300})_(?!\w)",
     r"\[([^\]\n]{10,300})\]\(", r"^#+\s*(.{10,300})$")]
 
+NAME_TOKEN = r"[A-ZÀ-Ý][\w'’.\-]*"
+AUTHOR_LIST_RE = re.compile(rf"\bet al\b|^{NAME_TOKEN}(?:\s*(?:[–—,&]|\band\b)\s*{NAME_TOKEN})+$")
+
 def title_candidates(segment, rid):
     out = []
     for rx in TITLE_CAND_RES:
         for m in rx.finditer(segment):
             c = re.sub(r"^\s*(?:\d+[.)]\s*)", "", m.group(1)).strip(" :–—-")
+            if AUTHOR_LIST_RE.search(c):                  # bold author names, not a title
+                continue
             if len(norm(c).split()) >= 4 and rid not in c and "arxiv.org" not in c.lower():
                 out.append(c)
     return out

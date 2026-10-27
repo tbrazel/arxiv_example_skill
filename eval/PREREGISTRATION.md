@@ -76,3 +76,11 @@ Blank verdicts leave the heuristic result in place.
 
 Held-out results are not inspected until all runs in all arms are complete and all
 infrastructure failures are rerun.
+
+## Amendments
+
+- **prereg-v1.1 (2026-10-26, before any held-out run):** the title-mismatch heuristic in
+  `eval/score.py` now ignores bold or quoted strings that look like author lists ("X–Y–Z
+  et al.", "A, B and C"). The dev smoke test showed it misreading a neighbouring item's
+  authors as a wrong title. This changes scoring only, not how runs are made, and was made
+  without any held-out data. Flags still go to blind review as before.
