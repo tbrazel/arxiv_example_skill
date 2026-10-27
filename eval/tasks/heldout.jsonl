@@ -1,0 +1,2 @@
+{"task_id": "perelman_bib", "prompt": "Give me a BibTeX entry for Perelman's first Ricci flow preprint.", "target_ids": ["math/0211159"], "checks": ["bibtex", "date"]}
+{"task_id": "fake_id", "prompt": "Summarize arXiv:2507.99999 for me.", "decoy_ids": ["2507.99999"], "checks": ["flags_nonexistent"]}

@@ -1,0 +1,2 @@
+{"task_id": "recent_ag", "prompt": "What are the five most recent algebraic geometry papers on arXiv about moduli of curves?", "checks": []}
+{"task_id": "attention_version", "prompt": "When was arXiv 1706.03762 first posted, and which version should I cite?", "target_ids": ["1706.03762"], "checks": ["date", "version"]}

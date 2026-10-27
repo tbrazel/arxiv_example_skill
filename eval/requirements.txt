@@ -1,0 +1,2 @@
+mitmproxy
+scipy  # optional: adds the Wilcoxon signed-rank test to score.py
